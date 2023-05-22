@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .btn {
+      background-color: #4caf50;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      if (username.trim() === '') {
+        document.getElementById('username-error').innerText = 'Por favor, digite seu nome de usuário.';
+        return false;
+      }
+
+      if (password.trim() === '') {
+        document.getElementById('password-error').innerText = 'Por favor, digite sua senha.';
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+<nav>
+  <a href="/">Home</a>
+  <a href="/page2.html" aria-current="page">Other page</a>
+  <a href="/Produto_cadastro.html">Cadastro de produtos</a>
+  <a href="/login.qute.html" aria-current="page"> login</a>
+</nav>
+<div class="container">
+  <h1>Página de Login</h1>
+  <form action="process_login.php" method="POST" onsubmit="return validateForm()">
+    <div class="form-group">
+      <label for="username">Nome de Usuário:</label>
+      <input type="text" id="username" name="username">
+      <div id="username-error" class="error-message"></div>
+    </div>
+    <div class="form-group">
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password">
+      <div id="password-error" class="error-message"></div>
+    </div>
+    <button type="submit" class="btn">Entrar</button>
+  </form>
+</div>
+</body>
+
+</html>
